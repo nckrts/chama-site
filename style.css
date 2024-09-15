@@ -1,0 +1,408 @@
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4ff; /* Fundo suave */
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #d3d3d3;
+    color: #fff;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+}
+
+.logo {
+    max-width: 150px;
+    max-height: 100px;
+    margin-left: -30%; /* Ajuste fino da logo para centralização */
+    animation: dropLogo 1.2s ease forwards; /* Animação de queda */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+/* Animação de queda para a logo */
+@keyframes dropLogo {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Menu toggle */
+.menu-toggle {
+    order: -1; /* Garante que o botão de menu fique no início */
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Menu de navegação lateral */
+.nav-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #6289ff;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin: 1em 0;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+/* Hero section */
+.hero {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 2em;
+}
+
+.hero form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.hero input {
+    padding: 0.5em;
+    margin-right: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.hero button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.imgjardineiro {
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    max-height: 350px;
+    animation: fadeInJardineiro 1.5s ease forwards; /* Animação de aparecimento */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+/* Animação de aparecimento para a imagem do jardineiro */
+@keyframes fadeInJardineiro {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Seções */
+section {
+    padding: 2em;
+    background-color: #fff;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}
+
+#about {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+/* Texto da seção 'Sobre Nós' */
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lista de serviços */
+.service-list {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 4px;
+    flex: 1 1 calc(33.333% - 1em);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+    background-color: #003bff;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 0; /* Centraliza a logo em telas menores */
+    }
+
+    .hero {
+        padding: 1em;
+    }
+}
+
+/* Efeito de abertura do menu */
+.menu-open .nav-menu {
+    left: 0;
+}
+
+
+/* Botão de fechar o menu */
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Menu de navegação lateral */
+.nav-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #6289ff;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+    overflow: hidden; /* Garante que o conteúdo não vaze do menu */
+}
+
+
+.nav-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #003bff; /* Azul mais intenso */
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao menu */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens no menu */
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-menu ul li {
+    width: 100%;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1.2em 0;
+    text-align: center;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #0056b3; /* Efeito hover */
+}
+
+/* Botão de fechar o menu */
+.close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Efeito de abertura do menu */
+.menu-open .nav-menu {
+    left: 0;
+}
+
+/* Estilos para a grid de serviços */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 1em; /* Espaço entre os quadrados */
+    padding: 2em;
+}
+
+.service-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+    width: 100px; /* Tamanho das imagens */
+    height: 100px;
+    object-fit: cover; /* Mantém a proporção da imagem */
+    margin-bottom: 1em;
+    border-radius: 50%; /* Faz as imagens redondas */
+}
+
+.service-item p {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: 1fr 1fr; /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
+}
+
+#services {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+#contact {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+/* Estilos para o botão com efeito hover */
+.help-button {
+    padding: 0.7em 1.5em;
+    background-color: #007bff; /* Cor inicial do botão */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.help-button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+    transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+}
+
+.help-button:active {
+    transform: translateY(0); /* Remove a elevação ao clicar */
+}
+
+.help-button:focus {
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilo para os parceiros */
+#partners {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.partner-item img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
